@@ -1,0 +1,39 @@
+---
+// layout
+import Layout from '../layouts/Layout.astro';
+
+// components
+import Text from '../components/elements/Text.astro';
+import Link from '../components/elements/Link.astro';
+import Heading from '../components/elements/Heading.astro';
+---
+
+<Layout title="Home">
+    <Heading tagName='h2' tagSize='h3'>Headings</Heading>
+    <div class="bg-white h-px mb-2"></div>
+    <div class="flex flex-col items-start pb-6">
+        <Heading tagName='h1' tagSize='h1'>Heading 1</Heading>
+        <Heading tagName='h2' tagSize='h2'>Heading 2</Heading>
+        <Heading tagName='h3' tagSize='h3'>Heading 3</Heading>
+        <Heading tagName='h4' tagSize='h4'>Heading 4</Heading>
+        <Heading tagName='h5' tagSize='h5'>Heading 5</Heading>
+        <Heading tagName='h6' tagSize='h6'>Heading 6</Heading>
+    </div>
+    <Heading tagName='h2' tagSize='h3'>Text</Heading>
+    <div class="bg-white h-px mb-2"></div>
+    <div class="flex flex-col items-start pb-6">
+        <Text variant={'xl'}>Extra large text</Text>
+        <Text variant={'lg'}>Large text</Text>
+        <Text variant={'md'}>Mid text</Text>
+        <Text variant={'sm'}>Small text (default)</Text>
+        <Text variant={'xsm'}>Extra small text</Text>
+    </div>
+    <Heading tagName='h2' tagSize='h3'>Links</Heading>
+    <div class="bg-white h-px mb-2"></div>
+    <div class="flex flex-col items-start">
+        <Link href='/' variant={'nav'}>Nav Link</Link>
+        <Link href='/' variant={'inline'}>inline link</Link>  
+                <Link href='/' variant={'button'}>Button</Link>   
+    </div>
+
+</Layout>
