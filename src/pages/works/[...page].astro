@@ -1,0 +1,22 @@
+---
+// layout
+import Layout from "../../layouts/Layout.astro";
+
+// components
+import Heading from "../../components/elements/Heading.astro";
+import AllWorks from "../../components/sections/works/Works.astro";
+
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+export const getStaticPaths = (async ({paginate}) => {
+    const themes = await getCollection("works", ({data}) => !data.isDraft)
+    return paginate(themes, {pageSize: 9});
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<Layout title="Works">
+    <Heading tagName="h1" tagSize="h1" class="text-center">Works</Heading>
+    <AllWorks />
+</Layout>
