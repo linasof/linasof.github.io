@@ -15,7 +15,7 @@ const featuredWorks = works.filter(work => work.data.isFeatured === true);
     <Heading tagName="h2" tagSize="h2" class="text-center">
         Featured Works
     </Heading>
-    <Container class="grid md:grid-cols-2 grid-cols-1 gap-16">
+    <Container class="grid lg:grid-cols-2 grid-cols-1 gap-16">
         {featuredWorks.map((work) => (
             <Work 
                 slug={work.data.slug}
