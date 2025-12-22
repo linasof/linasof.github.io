@@ -5,6 +5,7 @@ Grunge is a portfolio Astro theme with a grunge aesthetic, perfect for developer
 - Astro
 - Tailwind v4
 - JavaScript
+- TypeScript
 
 ## Pages
 - Home
