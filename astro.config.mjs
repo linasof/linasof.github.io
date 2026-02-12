@@ -10,7 +10,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
   integrations: [sitemap()],
-  site: "https://grunge.pages.dev"
+  site: "https://linasof.github.io"
 });
