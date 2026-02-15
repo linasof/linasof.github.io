@@ -1,15 +1,25 @@
 ---
-// components
 import Heading from "../../elements/Heading.astro";
 import Container from "../../elements/Container.astro";
 import Text from "../../elements/Text.astro";
 ---
 
 <Container variant={'xl'} class="text-center text-base-900 flex flex-col items-center">
-    <Heading tagName="h1" tagSize="h1">Presentacion 📽️</Heading>
+    <Heading tagName="h1" tagSize="h1">Presentación 📽️</Heading>
+
     <div class="max-w-3xl flex flex-col gap-4">
+        <!-- Video desde public/videos -->
+        <video 
+            src="/videos/pre.mp4"  <!-- ruta absoluta desde public -->
+            controls
+            class="w-full rounded-lg shadow-lg"
+        >
+            Tu navegador no soporta la reproducción de video.
+        </video>
+
+        <!-- Texto adicional -->
         <Text variant={'xl'}>Let's Create Something Amazing Together!</Text>
         <Text variant={'sm'}>Ready to bring your vision to life? I'd love to hear about your project and explore how we can work together to create meaningful design solutions that drive results.</Text>
-        <Text variant={'sm'}>Currently acceptig new projects for Q3 2025. Response time: 24-48 hours.</Text>
+        <Text variant={'sm'}>Currently accepting new projects for Q3 2025. Response time: 24-48 hours.</Text>
     </div>
 </Container>
