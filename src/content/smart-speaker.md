@@ -2,7 +2,7 @@
 title: "Ver maratones de peliculas"
 slug: "smart-speaker"
 client: "Harmony Audio"
-category: "películas"
+category: "Películas"
 services: "Industrial Design, Prototyping, Design for Manufacturing"
 year: "2024"
 featuredImage: "./images/smart-speaker/peliculas.jpg"
