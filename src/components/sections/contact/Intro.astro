@@ -21,9 +21,10 @@ import Text from "../../elements/Text.astro";
                 Tu navegador no soporta la reproducción de video.
             </video>
 
-            <!-- Overlay oscuro estilo ImageContainer -->
-            <div class="absolute inset-0 bg-black/30"></div>
+            <!-- Overlay que ya no bloquea clic -->
+            <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
 
         </div>
     </div>
 </Container>
+
