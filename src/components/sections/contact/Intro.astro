@@ -7,17 +7,23 @@ import Text from "../../elements/Text.astro";
 <Container variant={'xl'} class="text-center text-base-900 flex flex-col items-center">
     <Heading tagName="h1" tagSize="h1">Presentación 📽️</Heading>
 
-    <div class="max-w-3xl flex flex-col gap-4">
-        <!-- Video desde public -->
-<video 
-  src="/pre.mp4" 
-  controls 
-  muted 
-  loop 
-  poster="/ruta/a/imagen-poster.jpg"  <!-- Agrega una imagen de portada -->
-  class="w-full rounded-lg shadow-lg"
->
-  Tu navegador no soporta la reproducción de video.
-</video>
+    <div class="max-w-3xl w-full">
+        <div class="relative overflow-hidden rounded-lg shadow-lg">
+
+            <video 
+                src="/pre.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="w-full h-full object-cover brightness-75 contrast-110"
+            >
+                Tu navegador no soporta la reproducción de video.
+            </video>
+
+            <!-- Overlay oscuro estilo ImageContainer -->
+            <div class="absolute inset-0 bg-black/30"></div>
+
+        </div>
     </div>
 </Container>
