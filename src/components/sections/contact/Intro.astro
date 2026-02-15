@@ -9,13 +9,17 @@ import Text from "../../elements/Text.astro";
 
     <div class="max-w-3xl flex flex-col gap-4">
         <!-- Video desde public -->
-        <video 
-            src="/pre.mp4"   <!-- ruta absoluta desde public -->
-            controls
-            class="w-full rounded-lg shadow-lg"
-        >
-            Tu navegador no soporta la reproducción de video.
-        </video>
+      <video 
+    src="/pre.mp4"   <!-- ruta absoluta desde public -->
+    controls        <!-- muestra botones de play, pausa, volumen -->
+    autoplay        <!-- se reproduce automáticamente -->
+    muted           <!-- obligatorio para autoplay en la mayoría de navegadores -->
+    loop            <!-- se repite al terminar -->
+    class="w-full rounded-lg shadow-lg"
+>
+    Tu navegador no soporta la reproducción de video.
+</video>
+
 
         <!-- Texto adicional -->
         <Text variant={'xl'}>Let's Create Something Amazing Together!</Text>
