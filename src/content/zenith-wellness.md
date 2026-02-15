@@ -2,7 +2,7 @@
 title: "Zenith Wellness App"
 slug: "zenith-wellness"
 client: "Zenith Health Technologies"
-category: "UI/UX Design"
+category: "Cielo"
 services: "User Research, Prototyping, Visual Design"
 year: "2023"
 featuredImage: "./images/zenith-wellness/1.jpg"

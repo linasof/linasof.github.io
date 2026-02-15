@@ -2,7 +2,7 @@
 title: "Harmony Smart Speaker"
 slug: "smart-speaker"
 client: "Harmony Audio"
-category: "Product Design"
+category: "Música"
 services: "Industrial Design, Prototyping, Design for Manufacturing"
 year: "2024"
 featuredImage: "./images/smart-speaker/1.jpg"
