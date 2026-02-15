@@ -1,25 +1,26 @@
-import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content'; 
+import { defineCollection, z } from "astro:content";
 
 const works = defineCollection({
-  loader: glob({ pattern: "src/content/**/*.md" }),
-  schema: ({ image }) => z.object({
-    title: z.string().max(50),
-    slug: z.string(),
-    client: z.string().max(50),
-    category: z.string().max(50),  // <-- cambio aquí
-    services: z.string().max(65),
-    year: z.string().max(4),
-    featuredImage: image(),
-    imageTwo: image(),
-    imageThree: image(),
-    imageFour: image(),
-    liveSite: z.string().url(),
-    description: z.string().max(350),
-    isFeatured: z.boolean(),
-    isDraft: z.boolean()
-  })
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string().max(50),
+      slug: z.string(),
+      client: z.string().max(50),
+      category: z.string().max(50), // ← ahora libre
+      services: z.string().max(65),
+      year: z.string().max(4),
+      featuredImage: image(),
+      imageTwo: image(),
+      imageThree: image(),
+      imageFour: image(),
+      liveSite: z.string().url(),
+      description: z.string().max(350),
+      isFeatured: z.boolean(),
+      isDraft: z.boolean(),
+    }),
 });
 
-
-export const collections = { works };
+export const collections = {
+  works,
+};
