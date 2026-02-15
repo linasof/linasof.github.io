@@ -2,7 +2,7 @@
 title: "Coffee Roaster Brand"
 slug: "coffee-brand"
 client: "Artifact Coffee"
-category: "Cafe"
+category: "Café"
 services: "Brand Strategy, Visual Identity, Packaging Design"
 year: "2023"
 featuredImage: "./images/coffee-brand/1.jpg"
