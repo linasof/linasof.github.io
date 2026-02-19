@@ -7,21 +7,24 @@ import Dropdown from "../../elements/Dropdown.astro";
 
 ---
 <Container variant={'lg'}>
-    <Heading tagName="h2" tagSize="h2" class="text-center">
-        Evidencias 🧾
-    </Heading>
+  <Heading tagName="h2" tagSize="h2" class="text-center">
+    Evidencias 🧾
+  </Heading>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-10 max-w-7xl mx-auto">
-        <img 
-            src="/aerolinea.jpg" 
-            alt="Aerolinea" 
-            class="w-full h-[500px] object-cover rounded-2xl shadow-xl" 
-        />
+  <div class="flex flex-col md:flex-row justify-center items-center gap-16 mt-12 w-full max-w-7xl mx-auto">
+    
+    <img 
+      src="/aerolinea.jpg" 
+      alt="Aerolinea" 
+      class="w-full md:w-1/2 h-[500px] object-cover rounded-2xl shadow-xl"
+    />
 
-        <img 
-            src="/biblio.png" 
-            alt="Biblioteca" 
-            class="w-full h-[500px] object-cover rounded-2xl shadow-xl" 
-        />
-    </div>
+    <img 
+      src="/biblio.png" 
+      alt="Biblioteca" 
+      class="w-full md:w-1/2 h-[500px] object-cover rounded-2xl shadow-xl"
+    />
+
+  </div>
 </Container>
+
