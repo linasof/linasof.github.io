@@ -1,27 +1,22 @@
 ---
+import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 const imagenes = frontmatter.imagenes || [];
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>{frontmatter.title}</title>
-</head>
-<body>
+<Layout title={frontmatter.title}>
   <section class="py-20 px-5">
     <div class="max-w-5xl mx-auto">
       <a href="/evidencias/modelado" class="text-yellow-600 mb-5 inline-block">← Volver a Modelado</a>
-      <h1 class="text-4xl font-black mb-10">{frontmatter.title}</h1>
+      <h1 class="text-4xl font-black mb-10 text-white">{frontmatter.title}</h1>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {imagenes.map((img: any, i: number) => (
-          <button onclick={`openLightbox(${i})`} class="flex flex-col bg-white border-2 border-black p-3 group text-left transition-all hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
-            <div class="w-full h-[200px] overflow-hidden">
+          <button onclick={`openLightbox(${i})`} class="flex flex-col bg-white/10 border border-white/20 p-3 group text-left transition-all hover:bg-white/20 rounded-xl">
+            <div class="w-full h-[200px] overflow-hidden rounded-lg">
               <img src={img.url} alt={img.nombre} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
             </div>
-            <p class="mt-2 text-sm font-medium text-gray-800">{img.nombre}</p>
+            <p class="mt-2 text-sm font-medium text-white">{img.nombre}</p>
           </button>
         ))}
       </div>
@@ -63,5 +58,4 @@ const imagenes = frontmatter.imagenes || [];
       if (e.key === "ArrowRight") nextImg();
     });
   </script>
-</body>
-</html>
+</Layout>
