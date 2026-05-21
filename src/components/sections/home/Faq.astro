@@ -3,9 +3,14 @@ import Container from "../../elements/Container.astro";
 import Heading from "../../elements/Heading.astro";
 
 const evidencias = [
-  { src: "/aerolinea.jpg", nombre: "Aerolínea" },
-  { src: "/biblio.png", nombre: "Biblioteca" },
   { src: "/3.jpg", nombre: "Streaming" },
+  { src: "/punto 1.png", nombre:"Taller MER- ER, Transporte "},
+  { src: "/punto 2.png", nombre:"Taller MER- ER, Empresa de bienes raices"},
+  { src: "/punto 3.png", nombre:"Taller MER- ER, Proveedor"},
+  { src: "/Biblioteca.png", nombre:"Taller MER- ER, Biblioteca "},
+  { src: "/Biblioteca.png", nombre:"Taller MER- ER, Biblioteca "},
+  { src: "/oficina.png", nombre:"Taller MER- ER, Oficina de universidad"},
+  { src: "/ultimo.png", nombre:"Taller MER- ER, Supermercados"},
 ];
 ---
 
@@ -16,7 +21,7 @@ const evidencias = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
       {evidencias.map((item) => (
         <div class="flex flex-col items-center gap-3">
-          <a href={item.src} target="_blank" rel="noopener" class="w-full group">
+          <a href={item.src} target="_white" rel="noopener" class="w-full group">
             <div class="relative overflow-hidden rounded-2xl shadow-xl">
               <img
                 src={item.src}
