@@ -1,26 +1,28 @@
 ---
-// components
 import Container from "../../elements/Container.astro";
-import ContainerBottom from "../../elements/ContainerBottom.astro";
 import Heading from "../../elements/Heading.astro";
-import Dropdown from "../../elements/Dropdown.astro";
+
+const evidencias = [
+  { src: "/aerolinea.jpg", nombre: "Aerolínea" },
+  { src: "/biblio.png", nombre: "Biblioteca" },
+  { src: "/3.jpg", nombre: "Evidencia 3" },
+];
 ---
 
 <Container variant={'lg'}>
- <section class="w-full">
-<Heading tagName="h2" tagSize="h2" class="text-center">Evidencias 🧾</Heading>
+  <section class="w-full">
+    <Heading tagName="h2" tagSize="h2" class="text-center">Evidencias 🧾</Heading>
 
-  <div class="flex gap-14 mt-10">
-    <img 
-      src="/aerolinea.jpg" 
-       class="w-[650px] h-[350px] object-cover rounded-2xl shadow-xl"/>
-    <img 
-      src="/biblio.png" 
-      class="w-[650px] h-[350px] object-cover rounded-2xl shadow-xl"/>
-  </div>
-   <img 
-  src="/3.jpg" 
-  class="w-[650px] h-[350px] object-cover rounded-2xl shadow-xl mt-16 mx-auto"/>
-</section>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+      {evidencias.map((item) => (
+        <div class="flex flex-col items-center gap-3">
+          <img
+            src={item.src}
+            class="w-full h-[250px] object-cover rounded-2xl shadow-xl"
+          />
+          <p class="text-center font-semibold text-lg">{item.nombre}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 </Container>
-
