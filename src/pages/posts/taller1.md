@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/PostLayout.astro"
 title: "Taller MER-ER 1"
 categoria: "modelado"
 image:

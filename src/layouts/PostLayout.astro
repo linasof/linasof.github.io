@@ -1,0 +1,67 @@
+---
+const { frontmatter } = Astro.props;
+const imagenes = frontmatter.imagenes || [];
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>{frontmatter.title}</title>
+</head>
+<body>
+  <section class="py-20 px-5">
+    <div class="max-w-5xl mx-auto">
+      <a href="/evidencias/modelado" class="text-yellow-600 mb-5 inline-block">← Volver a Modelado</a>
+      <h1 class="text-4xl font-black mb-10">{frontmatter.title}</h1>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {imagenes.map((img: any, i: number) => (
+          <button onclick={`openLightbox(${i})`} class="flex flex-col bg-white border-2 border-black p-3 group text-left transition-all hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
+            <div class="w-full h-[200px] overflow-hidden">
+              <img src={img.url} alt={img.nombre} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <p class="mt-2 text-sm font-medium text-gray-800">{img.nombre}</p>
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm items-center justify-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-5 right-6 text-white text-4xl font-bold hover:opacity-70">✕</button>
+    <button onclick="prevImg()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl font-bold hover:opacity-70">‹</button>
+    <button onclick="nextImg()" class="absolute right-6 top-1/2 -translate-y-1/2 text-white text-5xl font-bold hover:opacity-70">›</button>
+    <div class="flex flex-col items-center gap-4 max-w-4xl w-full">
+      <img id="lightbox-img" src="" alt="" class="max-h-[80vh] w-auto rounded object-contain shadow-2xl" />
+      <p id="lightbox-caption" class="text-white text-center text-lg font-semibold"></p>
+    </div>
+  </div>
+
+  <script define:vars={{ imagenes }}>
+    let current = 0;
+    function openLightbox(i) { current = i; update(); show(true); }
+    function closeLightbox() { show(false); }
+    function prevImg() { current = (current - 1 + imagenes.length) % imagenes.length; update(); }
+    function nextImg() { current = (current + 1) % imagenes.length; update(); }
+    function update() {
+      document.getElementById("lightbox-img").src = imagenes[current].url;
+      document.getElementById("lightbox-caption").textContent = imagenes[current].nombre;
+    }
+    function show(visible) {
+      const lb = document.getElementById("lightbox");
+      lb.classList.toggle("hidden", !visible);
+      lb.classList.toggle("flex", visible);
+      document.body.style.overflow = visible ? "hidden" : "";
+    }
+    document.getElementById("lightbox").addEventListener("click", (e) => {
+      if (e.target === document.getElementById("lightbox")) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevImg();
+      if (e.key === "ArrowRight") nextImg();
+    });
+  </script>
+</body>
+</html>
