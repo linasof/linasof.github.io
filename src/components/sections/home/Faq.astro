@@ -5,7 +5,7 @@ import Heading from "../../elements/Heading.astro";
 const evidencias = [
   { src: "/aerolinea.jpg", nombre: "Aerolínea" },
   { src: "/biblio.png", nombre: "Biblioteca" },
-  { src: "/3.jpg", nombre: "Evidencia 3" },
+  { src: "/3.jpg", nombre: "Streaming" },
 ];
 ---
 
@@ -16,10 +16,17 @@ const evidencias = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
       {evidencias.map((item) => (
         <div class="flex flex-col items-center gap-3">
-          <img
-            src={item.src}
-            class="w-full h-[250px] object-cover rounded-2xl shadow-xl"
-          />
+          <a href={item.src} target="_blank" rel="noopener" class="w-full group">
+            <div class="relative overflow-hidden rounded-2xl shadow-xl">
+              <img
+                src={item.src}
+                class="w-full h-[400px] object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-2xl">
+                <span class="text-white text-sm font-semibold">🔍 Ver en detalle</span>
+              </div>
+            </div>
+          </a>
           <p class="text-center font-semibold text-lg">{item.nombre}</p>
         </div>
       ))}
