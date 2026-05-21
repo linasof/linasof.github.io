@@ -21,7 +21,10 @@ const evidencias = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
       {evidencias.map((item) => (
         <div class="flex flex-col items-center gap-3">
-          <a href={item.src} target="_white" rel="noopener" class="w-full group">
+          <button
+            class="w-full group cursor-pointer border-0 bg-transparent p-0"
+            onclick={`openLightbox('${item.src}', '${item.nombre}')`}
+          >
             <div class="relative overflow-hidden rounded-2xl shadow-xl">
               <img
                 src={item.src}
@@ -31,10 +34,40 @@ const evidencias = [
                 <span class="text-white text-sm font-semibold">🔍 Ver en detalle</span>
               </div>
             </div>
-          </a>
-          <p class="text-center font-semibold text-lg">{item.nombre}</p>
+          </button>
+          <p class="text-center font-semibold text-xl text-white">{item.nombre}</p>
         </div>
       ))}
     </div>
   </section>
 </Container>
+
+<!-- Lightbox Modal -->
+<div
+  id="lightbox"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+  onclick="closeLightbox(event)"
+>
+  <div class="relative max-w-5xl w-full flex flex-col items-center gap-4">
+    <!-- Botón cerrar -->
+    <button
+      onclick="closeLightbox()"
+      class="absolute -top-10 right-0 text-white text-3xl font-bold hover:text-gray-300 transition"
+    >
+      ✕
+    </button>
+
+    <img
+      id="lightbox-img"
+      src=""
+      alt=""
+      class="max-h-[85vh] w-auto rounded-2xl shadow-2xl object-contain"
+    />
+    <p id="lightbox-caption" class="text-white text-center text-lg font-semibold"></p>
+  </div>
+</div>
+
+<script>
+  function openLightbox(src: string, nombre: string) {
+    const lightbox = document.getElementById('lightbox')!;
+    const img = doc
