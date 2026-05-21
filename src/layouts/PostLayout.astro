@@ -12,11 +12,11 @@ const imagenes = frontmatter.imagenes || [];
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {imagenes.map((img: any, i: number) => (
-          <button onclick={`openLightbox(${i})`} class="flex flex-col bg-white/10 border border-white/20 p-3 group text-left transition-all hover:bg-white/20 rounded-xl">
-            <div class="w-full h-[200px] overflow-hidden rounded-lg">
+          <button data-index={i} class="lightbox-trigger flex flex-col bg-white/10 border border-white/20 p-3 group text-left transition-all hover:bg-white/20 rounded-xl">
+            <div class="w-full h-[200px] overflow-hidden rounded-lg pointer-events-none">
               <img src={img.url} alt={img.nombre} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
             </div>
-            <p class="mt-2 text-sm font-medium text-white">{img.nombre}</p>
+            <p class="mt-2 text-sm font-medium text-white pointer-events-none">{img.nombre}</p>
           </button>
         ))}
       </div>
@@ -24,10 +24,10 @@ const imagenes = frontmatter.imagenes || [];
   </section>
 
   <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm items-center justify-center p-4">
-    <button onclick="closeLightbox()" class="absolute top-5 right-6 text-white text-4xl font-bold hover:opacity-70">✕</button>
-    <button onclick="prevImg()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl font-bold hover:opacity-70">‹</button>
-    <button onclick="nextImg()" class="absolute right-6 top-1/2 -translate-y-1/2 text-white text-5xl font-bold hover:opacity-70">›</button>
-    <div class="flex flex-col items-center gap-4 max-w-4xl w-full">
+    <button id="btn-close" class="absolute top-5 right-6 text-white text-4xl font-bold hover:opacity-70">✕</button>
+    <button id="btn-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl font-bold hover:opacity-70">‹</button>
+    <button id="btn-next" class="absolute right-6 top-1/2 -translate-y-1/2 text-white text-5xl font-bold hover:opacity-70">›</button>
+    <div class="flex flex-col items-center gap-4 max-w-4xl w-full pointer-events-none">
       <img id="lightbox-img" src="" alt="" class="max-h-[80vh] w-auto rounded object-contain shadow-2xl" />
       <p id="lightbox-caption" class="text-white text-center text-lg font-semibold"></p>
     </div>
@@ -35,27 +35,45 @@ const imagenes = frontmatter.imagenes || [];
 
   <script define:vars={{ imagenes }}>
     let current = 0;
-    function openLightbox(i) { current = i; update(); show(true); }
-    function closeLightbox() { show(false); }
-    function prevImg() { current = (current - 1 + imagenes.length) % imagenes.length; update(); }
-    function nextImg() { current = (current + 1) % imagenes.length; update(); }
+
     function update() {
       document.getElementById("lightbox-img").src = imagenes[current].url;
       document.getElementById("lightbox-caption").textContent = imagenes[current].nombre;
     }
+
     function show(visible) {
       const lb = document.getElementById("lightbox");
       lb.classList.toggle("hidden", !visible);
       lb.classList.toggle("flex", visible);
       document.body.style.overflow = visible ? "hidden" : "";
     }
-    document.getElementById("lightbox").addEventListener("click", (e) => {
-      if (e.target === document.getElementById("lightbox")) closeLightbox();
+
+    document.querySelectorAll(".lightbox-trigger").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        current = parseInt(btn.getAttribute("data-index"));
+        update();
+        show(true);
+      });
     });
+
+    document.getElementById("btn-close").addEventListener("click", () => show(false));
+    document.getElementById("btn-prev").addEventListener("click", () => {
+      current = (current - 1 + imagenes.length) % imagenes.length;
+      update();
+    });
+    document.getElementById("btn-next").addEventListener("click", () => {
+      current = (current + 1) % imagenes.length;
+      update();
+    });
+
+    document.getElementById("lightbox").addEventListener("click", (e) => {
+      if (e.target === document.getElementById("lightbox")) show(false);
+    });
+
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") prevImg();
-      if (e.key === "ArrowRight") nextImg();
+      if (e.key === "Escape") show(false);
+      if (e.key === "ArrowLeft") { current = (current - 1 + imagenes.length) % imagenes.length; update(); }
+      if (e.key === "ArrowRight") { current = (current + 1) % imagenes.length; update(); }
     });
   </script>
 </Layout>
