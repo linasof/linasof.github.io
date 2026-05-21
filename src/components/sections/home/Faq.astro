@@ -70,4 +70,30 @@ const evidencias = [
 <script>
   function openLightbox(src: string, nombre: string) {
     const lightbox = document.getElementById('lightbox')!;
-    const img = doc
+    const img = document.getElementById('lightbox-img') as HTMLImageElement;
+    const caption = document.getElementById('lightbox-caption')!;
+
+    img.src = src;
+    img.alt = nombre;
+    caption.textContent = nombre;
+
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(event?: MouseEvent) {
+    // Solo cerrar si se hace clic en el fondo, no en la imagen
+    if (event && (event.target as HTMLElement).closest('img')) return;
+
+    const lightbox = document.getElementById('lightbox')!;
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  // Cerrar con tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
