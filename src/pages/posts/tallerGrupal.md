@@ -4,7 +4,7 @@ title: "Primer Taller Grupal - Fase 1"
 categoria: "modelado"
 link: "https://drive.google.com/file/d/1Oqa_haNFNdwvcoYoKdPf6bPrJC12h9NM/view?usp=sharing"
 image:
-  url: "/punto 1.png"
+  url: "/nomina.png"
 descripcion: "Talleres de modelado entidad-relación y entidad_relacion extendido."
 imagenes:
   - url: "/nomina.png"
