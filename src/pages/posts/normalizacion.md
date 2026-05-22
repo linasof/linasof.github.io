@@ -6,16 +6,14 @@ image:
   url: "/Normalizacion.png"
   alt: "Normalización"
 descripcion: "Ejercicio de normalización."
-likes: '0'
-comments: '0'
 ---
 
-Ejercicio de normalización - Abril 2025
+Ejercicio de normalización
 
 Realizado por: Tu nombre
 
 <iframe 
-  src="/Taller_Normalizacion(2).pdf" 
+  src="/Taller_Normalizacion.pdf" 
   width="100%" 
   height="600px"
   style="border: none;"
