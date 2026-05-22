@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/PostLayout.astro"
-title: "Taller MER-ER 1"
+title: "Taller MER-ER 1, MERE_v3 y MER_v4"
 categoria: "modelado"
 link: "https://drive.google.com/file/d/1Oqa_haNFNdwvcoYoKdPf6bPrJC12h9NM/view?usp=sharing"
 image:
