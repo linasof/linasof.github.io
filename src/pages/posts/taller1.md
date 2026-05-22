@@ -2,6 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "Taller MER-ER 1"
 categoria: "modelado"
+link: "https://drive.google.com/file/d/1Oqa_haNFNdwvcoYoKdPf6bPrJC12h9NM/view?usp=sharing"
 image:
   url: "/punto 1.png"
 descripcion: "Talleres de modelado entidad-relación."

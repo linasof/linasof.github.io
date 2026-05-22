@@ -10,6 +10,12 @@ const imagenes = frontmatter.imagenes || [];
       <a href="/evidencias/modelado" class="text-yellow-600 mb-5 inline-block">← Volver a Modelado</a>
       <h1 class="text-4xl font-black mb-10 text-white">{frontmatter.title}</h1>
 
+      {frontmatter.link && (
+  <a href={frontmatter.link} target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 underline mb-10 text-sm font-medium">
+    📄 Ver documento completo
+  </a>
+)}
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {imagenes.map((img: any, i: number) => (
           <button data-index={i} class="lightbox-trigger flex flex-col bg-white/10 border border-white/20 p-3 group text-left transition-all hover:bg-white/20 rounded-xl">
