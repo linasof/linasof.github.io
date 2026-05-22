@@ -13,7 +13,7 @@ Ejercicio de normalización
 Realizado por: Tu nombre
 
 <iframe 
-  src="/Taller_Normalizacion.pdf" 
+  src="/Taller_Normalizacion(2).pdf" 
   width="100%" 
   height="600px"
   style="border: none;"

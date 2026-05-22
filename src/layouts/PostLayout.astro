@@ -2,26 +2,37 @@
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 const imagenes = frontmatter.imagenes || [];
+
+const rutasVolver: Record<string, { url: string; texto: string }> = {
+  modelado: { url: "/evidencias/modelado", texto: "← Volver a Modelado" },
+  normalizacion: { url: "/evidencias/normalizacion", texto: "← Volver a Normalización" },
+  sql: { url: "/evidencias/sql", texto: "← Volver a SQL" },
+  proyecto: { url: "/evidencias/proyecto", texto: "← Volver a Proyecto" },
+};
+
+const volver = rutasVolver[frontmatter.categoria] || { url: "/evidencias", texto: "← Volver a Evidencias" };
 ---
 
 <Layout title={frontmatter.title}>
   <section class="py-20 px-5">
     <div class="max-w-5xl mx-auto">
-      <a href="/evidencias/modelado" class="text-yellow-600 mb-5 inline-block">← Volver a Modelado</a>
+      <a href={volver.url} class="text-yellow-600 mb-5 inline-block">{volver.texto}</a>
       <h1 class="text-4xl font-black mb-4 text-white">{frontmatter.title}</h1>
 
-{frontmatter.links && (
-  <div class="flex flex-wrap gap-3 mb-10">
-    {frontmatter.links.map((l: any) => (
-      <a href={l.url} target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 underline text-sm font-medium">
-        📄 Ver documento: {l.nombre}
-      </a>
-    ))}
-  </div>
-)}
-<div class="prose prose-invert max-w-none mt-10">
-  <slot />
-</div>
+      {frontmatter.links && (
+        <div class="flex flex-wrap gap-3 mb-10">
+          {frontmatter.links.map((l: any) => (
+            <a href={l.url} target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 underline text-sm font-medium">
+              📄 Ver documento: {l.nombre}
+            </a>
+          ))}
+        </div>
+      )}
+
+      <div class="prose prose-invert max-w-none mt-6 mb-10">
+        <slot />
+      </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {imagenes.map((img: any, i: number) => (
           <button data-index={i} class="lightbox-trigger flex flex-col bg-white/10 border border-white/20 p-3 group text-left transition-all hover:bg-white/20 rounded-xl">
