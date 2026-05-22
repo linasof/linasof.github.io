@@ -14,5 +14,4 @@ imagenes:
     nombre: "Ejercisio 3: Se requiere diseñar la base de datos para la gestión operativa del Sistema de Metro de Bogotá."
   - url: "/ejer4.png"
     nombre: "Ejercisio 4: Base de datos que gestione la discoteca de Don Juan llamada La Facultad"
-
 ---

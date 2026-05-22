@@ -19,6 +19,9 @@ const imagenes = frontmatter.imagenes || [];
     ))}
   </div>
 )}
+<div class="prose prose-invert max-w-none mt-10">
+  <slot />
+</div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {imagenes.map((img: any, i: number) => (
           <button data-index={i} class="lightbox-trigger flex flex-col bg-white/10 border border-white/20 p-3 group text-left transition-all hover:bg-white/20 rounded-xl">
