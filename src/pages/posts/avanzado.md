@@ -8,9 +8,7 @@ image:
 descripcion: "Ejercicio de normalización."
 ---
 <p style="color: white;">Taller de normalizacion avanzado</p>
-
-<p style="color: white;">Realizado por: Tu nombre</p>
-
+<p style="color: white;">Realizado por: Tu nombre</p>  
 
 <iframe 
   src="/avanzado.pdf" 
