@@ -5,10 +5,14 @@ categoria: "normalizacion"
 image:
   url: "/Normalizacion.png"
   alt: "Normalización Avanzado"
-descripcion: "Ejercicio de normalización."
+descripcion: "Ejercicio de normalización avanzado."
 ---
-<p style="color: white;">Taller de normalizacion avanzado</p>
-<p style="color: white;">Realizado por: Tu nombre</p>  
+
+<p style="color: white;">Taller de normalización avanzado</p>
+
+<a href="/Taller_Normalizacion_avanzado.ods" download style="color: #facc15; text-decoration: underline;">
+  📥 Descargar archivo Excel
+</a>
 
 <iframe 
   src="/avanzado.pdf" 
