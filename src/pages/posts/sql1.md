@@ -6,7 +6,7 @@ image:
   url: "/sql.png"
 descripcion: " SQL: INNER JOIN, LEFT JOIN y RIGHT JOIN"
 imagenes:
-  - url: "/1.jpg"
+  - url: "/1.png"
     nombre: "traer el nombre y el departamento de los empleados, inner join traer informacion de 2 tablas relacionadas "
   - url: "/2.png"
     nombre: "Muéstrame el nombre de cada empleado y la región del mundo donde trabaja."
