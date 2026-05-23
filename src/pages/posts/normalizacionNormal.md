@@ -7,7 +7,6 @@ image:
   alt: "Normalización"
 descripcion: "Ejercicio de normalización."
 ---
-
 <iframe 
   src="/normalizacion normal.pdf" 
   width="100%" 
