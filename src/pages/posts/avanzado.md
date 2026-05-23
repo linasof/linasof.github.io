@@ -3,7 +3,7 @@ layout: "../../layouts/PostLayout.astro"
 title: "Taller Normalización Avanzado"
 categoria: "normalizacion"
 image:
-  url: "/avanzado.png"
+  url: "/avazado.png"
   alt: "Normalización Avanzado"
 descripcion: "Ejercicio de normalización avanzado."
 ---
