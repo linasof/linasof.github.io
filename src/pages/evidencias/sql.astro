@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 
 const allPosts = Object.values(
-  import.meta.glob("../../pages/posts/*.md", { eager: true }),
+  import.meta.glob("../posts/*.md", { eager: true }),
 );
 const posts = allPosts.filter(
   (post: any) => post.frontmatter?.categoria === "sql",
