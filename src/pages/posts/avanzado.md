@@ -13,6 +13,7 @@ descripcion: "Ejercicio de normalización avanzado."
 <a href="/Taller_Normalizacion_avanzado.ods" download style="color: #facc15; text-decoration: underline;">
   📥 Descargar archivo Excel
 </a>
+<a></a>
 
 <iframe 
   src="/avanzado.pdf" 
