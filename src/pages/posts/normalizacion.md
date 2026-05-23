@@ -7,13 +7,9 @@ image:
   alt: "Normalización"
 descripcion: "Ejercicio de normalización."
 ---
-<p style="color: white;">Ejercicio de normalización</p>
-
-<p style="color: white;">Realizado por: Tu nombre</p>
-
 
 <iframe 
-  src="/Taller_Normalizacion.pdf" 
+  src="/normalizacion normal.pdf" 
   width="100%" 
   height="600px"
   style="border: none;"
