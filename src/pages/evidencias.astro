@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Container from "../components/elements/Container.astro";
 
 const cursos = [
-  { nombre: "Bases de Datos 1", imagen: "/Normalizacion.png", url: "/evidencias/bases-de-datos-1" },
-  { nombre: "Bases de Datos 2", imagen: "/sql.png", url: "/evidencias/bases-de-datos-2" },
+  { nombre: "Bases de Datos 1", imagen: "/portada-bases-1.png", url: "/evidencias/bases-de-datos-1" },
+  { nombre: "Bases de Datos 2", imagen: "/portada-bases-2.png", url: "/evidencias/bases-de-datos-2" },
 ];
 ---
 
@@ -12,11 +12,11 @@ const cursos = [
   <Container variant="lg">
     <section class="w-full">
       <h1 class="text-center text-5xl font-black text-white">Evidencias</h1>
-      <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2">
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
         {cursos.map((curso) => (
-          <a href={curso.url} class="group relative block overflow-hidden border-2 border-white focus-visible:outline-4 focus-visible:outline-yellow-400">
-            <img src={curso.imagen} alt="" class="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
-            <h2 class="absolute inset-x-0 bottom-0 bg-black/85 p-4 text-center text-2xl font-bold text-white">{curso.nombre}</h2>
+          <a href={curso.url} class="group block overflow-hidden rounded-xl border border-white/30 bg-neutral-950 focus-visible:outline-4 focus-visible:outline-yellow-400">
+            <img src={curso.imagen} alt="" class="aspect-[2/1] md:aspect-[2.25/1] w-full object-cover object-[center_36%] motion-safe:transition-transform duration-300 motion-safe:group-hover:scale-[1.025]" />
+            <h2 class="border-t border-white/20 px-5 py-4 text-2xl font-bold text-white">{curso.nombre}</h2>
           </a>
         ))}
       </div>
