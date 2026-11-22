@@ -4,8 +4,8 @@ import { readFileSync } from "node:fs";
 const base = "/bases-2/banco-andino";
 const sql = readFileSync("public/bases-2/banco-andino/04_reto_corregido.sql", "utf8");
 const documentos = [
-  ["Informe del equipo", "informe.pdf"],
-  ["Guía del profesor", "guia.pdf"],
+  ["Informe Final", "informe.pdf"],
+  ["Guía del taller", "guia.pdf"],
 ];
 ---
 <Layout title="SQL avanzado · Banco Andino">
@@ -48,7 +48,7 @@ const documentos = [
       </div>
     </section>
     <section id="codigo" class="my-12">
-      <h2 class="mb-3 text-2xl font-bold">Script SQL corregido</h2>
+      <h2 class="mb-3 text-2xl font-bold">Script SQL</h2>
       <pre tabindex="0" aria-label="Código SQL" class="max-h-[65vh] overflow-auto rounded-lg bg-neutral-950 p-4 text-sm"><code>{sql}</code></pre>
       <a class="mt-2 inline-block underline" href={base + "/04_reto_corregido.sql"} download>Descargar script SQL</a>
     </section>
