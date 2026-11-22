@@ -1,17 +1,57 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
+import { readFileSync } from "node:fs";
+const base = "/bases-2/banco-andino";
+const sql = readFileSync("public/bases-2/banco-andino/04_reto_corregido.sql", "utf8");
+const documentos = [
+  ["Informe del equipo", "informe.pdf"],
+  ["Guía del profesor", "guia.pdf"],
+];
 ---
-<Layout title="Taller integrador · Banco Andino">
-  <article class="mx-auto w-full max-w-3xl px-5 py-12 text-white">
-    <a class="underline" href="/evidencias/bases-de-datos-2/sql-avanzado/">← Volver a SQL avanzado</a>
-    <h1 class="mt-8 text-4xl font-bold">Taller integrador · Banco Andino</h1>
-    <p class="mt-4">Lina Sofia Patiño, Gabriella Castro y Julián Samuel Rodríguez</p>
-    <p class="my-6">Analizamos por qué dos retiros simultáneos dejaban un saldo incorrecto. Corregimos la secuencia de transferencia para confirmar el débito y el crédito juntos y estudiamos el uso de índices para optimizar la consulta del tablero.</p>
-    <ul class="space-y-3 underline">
-      <li><a href="/bases-2/banco-andino/guia.pdf">Leer la guía del taller (PDF)</a></li>
-      <li><a href="/bases-2/banco-andino/informe.docx" download>Descargar informe del taller (Word)</a></li>
-      <li><a href="/bases-2/banco-andino/04_reto_corregido.sql" download>Descargar script corregido (SQL)</a></li>
-      <li><a href="https://youtu.be/cFvrH1RSe6Y">Ver video del taller</a></li>
-    </ul>
+<Layout title="SQL avanzado · Banco Andino">
+  <article class="mx-auto w-full min-w-0 max-w-5xl px-5 py-12 text-white">
+    <a href="/evidencias/bases-de-datos-2/" class="underline">← Volver a Bases de Datos 2</a>
+    <header class="my-8">
+      <p class="text-sm text-amber-200">SQL avanzado</p>
+      <h1 class="my-3 text-4xl font-black md:text-5xl">Taller integrador · Banco Andino</h1>
+      <p>Lina Sofia Patiño, Gabriella Castro y Julián Samuel Rodríguez</p>
+      <p class="mt-3">Analizamos transferencias simultáneas, corregimos la secuencia de débito y crédito y comparamos planes de ejecución con y sin índices.</p>
+    </header>
+    <nav aria-label="Secciones del taller" class="flex flex-wrap gap-4 border-y border-white/25 py-4 underline">
+      <a href="#documentos">Documentos</a><a href="#capturas">Capturas</a><a href="#codigo">Script SQL</a><a href="#video">Video</a>
+    </nav>
+    <div id="documentos">
+      {documentos.map(([nombre, archivo]) => (
+        <section class="my-10">
+          <h2 class="mb-3 text-2xl font-bold">{nombre}</h2>
+          <iframe title={nombre} src={base + "/" + archivo + "#view=FitH"} loading="lazy" class="block h-[70vh] w-full rounded-lg border border-white/25"></iframe>
+          <a class="mt-2 inline-block underline" href={base + "/" + archivo}>Abrir {nombre.toLowerCase()} en PDF</a>
+        </section>
+      ))}
+      <a class="underline" href={base + "/informe.docx"} download>Descargar informe original en Word</a>
+    </div>
+    <section id="capturas" class="my-12">
+      <h2 class="mb-4 text-2xl font-bold">Capturas del informe</h2>
+      <div class="grid gap-5 sm:grid-cols-2">
+        {Array.from({length: 20}, (_, i) => i + 1).map(n => (
+          <figure class="min-w-0 overflow-hidden rounded-lg border border-white/25 bg-neutral-950">
+            <a href={base + "/capturas/image" + n + ".png"}>
+              <img src={base + "/capturas/image" + n + ".png"} loading="lazy" alt={"Ampliar captura " + n + " del informe"} class="aspect-video w-full object-contain" />
+            </a>
+            <figcaption class="px-4 py-2 text-sm">Captura {n}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+    <section id="codigo" class="my-12">
+      <h2 class="mb-3 text-2xl font-bold">Script SQL corregido</h2>
+      <pre tabindex="0" aria-label="Código SQL" class="max-h-[65vh] overflow-auto rounded-lg bg-neutral-950 p-4 text-sm"><code>{sql}</code></pre>
+      <a class="mt-2 inline-block underline" href={base + "/04_reto_corregido.sql"} download>Descargar script SQL</a>
+    </section>
+    <section id="video">
+      <h2 class="mb-3 text-2xl font-bold">Video del taller</h2>
+      <iframe title="Video del taller Banco Andino" loading="lazy" class="aspect-video w-full" src="https://www.youtube-nocookie.com/embed/cFvrH1RSe6Y" allowfullscreen></iframe>
+      <a class="mt-2 inline-block underline" href="https://youtu.be/cFvrH1RSe6Y">Ver en YouTube</a>
+    </section>
   </article>
 </Layout>

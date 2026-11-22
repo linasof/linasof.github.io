@@ -1,12 +1,31 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
+import { readFileSync } from "node:fs";
+const carpeta = "/bases-2/inventario";
+const archivo = carpeta + "/TALLER_PLSQL_GRUPO_8.sql";
+const codigo = readFileSync("public" + archivo, "utf8");
 ---
-<Layout title="Taller de PL/SQL · Inventario">
-  <article class="mx-auto w-full max-w-3xl px-5 py-12 text-white">
-    <a href="/evidencias/bases-de-datos-2/pl-sql/" class="underline">← Volver a PL/SQL</a>
-    <h1 class="mt-8 text-4xl font-bold">Taller de PL/SQL · Inventario</h1>
-    <p class="mt-4">Gabriella Castro, Lina Patiño y Julián Rodríguez · Grupo 8</p>
-    <p class="my-6">Probamos procedimientos para registrar productos y ajustar las existencias de una bodega. El documento reúne bloques de prueba y evidencias de su ejecución.</p>
-    <a href="/bases-2/inventario/evidencias.pdf" class="underline">Ver evidencias del grupo (PDF)</a>
+<Layout title="PL/SQL · Inventario y ventas">
+  <article class="mx-auto w-full min-w-0 max-w-5xl px-5 py-12 text-white">
+    <a href="/evidencias/bases-de-datos-2/" class="underline">← Volver a Bases de Datos 2</a>
+    <header class="my-8">
+      <p class="text-sm text-amber-200">PL/SQL</p>
+      <h1 class="my-3 text-4xl font-black md:text-5xl">Taller de inventario y ventas</h1>
+      <p>Gabriella Castro, Lina Patiño y Julián Rodríguez · Grupo 8</p>
+      <p class="mt-3">Implementamos procedimientos para registrar productos, ajustar existencias y crear pedidos. El script incluye funciones, disparadores y el paquete de ventas PKG_VENTAS.</p>
+    </header>
+    <nav aria-label="Contenido del taller" class="flex flex-wrap gap-5 border-y border-white/25 py-4 underline">
+      <a href="#evidencias">Evidencias del grupo</a><a href="#script">Script completo</a>
+    </nav>
+    <section id="evidencias" class="my-10">
+      <h2 class="mb-3 text-2xl font-bold">Evidencias del grupo</h2>
+      <iframe src={carpeta + "/evidencias.pdf#view=FitH"} title="Evidencias y pruebas del grupo 8" class="block h-[70vh] w-full rounded-lg border border-white/25"></iframe>
+      <a class="mt-2 inline-block underline" href={carpeta + "/evidencias.pdf"}>Abrir el PDF</a>
+    </section>
+    <section id="script">
+      <h2 class="mb-3 text-2xl font-bold">Script completo de PL/SQL</h2>
+      <pre tabindex="0" aria-label="Código PL/SQL" class="max-h-[65vh] overflow-auto rounded-lg bg-neutral-950 p-4 text-sm"><code>{codigo}</code></pre>
+      <a class="mt-2 inline-block underline" href={archivo} download>Descargar el script (.sql)</a>
+    </section>
   </article>
 </Layout>
