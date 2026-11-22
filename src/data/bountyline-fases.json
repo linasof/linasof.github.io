@@ -1,0 +1,245 @@
+[
+  {
+    "slug": "fase-1",
+    "titulo": "Fase 1 · Propuesta y modelado",
+    "secciones": [
+      {
+        "nombre": "Propuesta y supuestos",
+        "docs": [
+          {
+            "titulo": "Propuesta del proyecto",
+            "url": "/bases-2/bountyline/fase-1/propuesta-del-proyecto.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Supuestos del proyecto",
+            "url": "/bases-2/bountyline/fase-1/supuestos-del-proyecto.pdf",
+            "tipo": "pdf"
+          }
+        ]
+      },
+      {
+        "nombre": "Diseño de datos",
+        "docs": [
+          {
+            "titulo": "Modelo entidad-relación · Peter Chen",
+            "url": "/bases-2/bountyline/fase-1/modelo-entidad-relacion-peter-chen.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Modelo entidad-relación extendido",
+            "url": "/bases-2/bountyline/fase-1/modelo-entidad-relacion-extendido.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Modelo relacional · Crow’s Foot",
+            "url": "/bases-2/bountyline/fase-1/modelo-relacional-crows-foot.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Diccionario de datos",
+            "url": "/bases-2/bountyline/fase-1/diccionario-de-datos.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Reportes SQL",
+            "url": "/bases-2/bountyline/fase-1/reportes-sql.pdf",
+            "tipo": "pdf"
+          }
+        ]
+      },
+      {
+        "nombre": "Documentación complementaria",
+        "docs": [
+          {
+            "titulo": "Acta de constitución",
+            "url": "/bases-2/bountyline/fase-1/acta-de-constitucion.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Diagrama de casos de uso",
+            "url": "/bases-2/bountyline/fase-1/diagrama-de-casos-de-uso.png",
+            "tipo": "png"
+          },
+          {
+            "titulo": "Arquitectura C4 · Componentes",
+            "url": "/bases-2/bountyline/fase-1/arquitectura-c4-componentes.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Diagrama de clases",
+            "url": "/bases-2/bountyline/fase-1/diagrama-de-clases.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Diagrama de objetos",
+            "url": "/bases-2/bountyline/fase-1/diagrama-de-objetos.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Diagrama de paquetes",
+            "url": "/bases-2/bountyline/fase-1/diagrama-de-paquetes.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Propuesta de procesos ETL",
+            "url": "/bases-2/bountyline/fase-1/propuesta-de-procesos-etl.pdf",
+            "tipo": "pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "fase-2",
+    "titulo": "Fase 2 · Implementación e integración",
+    "secciones": [
+      {
+        "nombre": "Infraestructura y despliegue",
+        "docs": [
+          {
+            "titulo": "Selección del sistema operativo",
+            "url": "/bases-2/bountyline/fase-2/seleccion-del-sistema-operativo.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Implementación de la máquina virtual",
+            "url": "/bases-2/bountyline/fase-2/implementacion-de-la-maquina-virtual.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Diagrama de despliegue",
+            "url": "/bases-2/bountyline/fase-2/diagrama-de-despliegue.pdf",
+            "tipo": "pdf"
+          }
+        ]
+      },
+      {
+        "nombre": "Base de datos relacional",
+        "docs": [
+          {
+            "titulo": "Selección del motor relacional",
+            "url": "/bases-2/bountyline/fase-2/seleccion-del-motor-relacional.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Implementación del motor relacional",
+            "url": "/bases-2/bountyline/fase-2/implementacion-del-motor-relacional.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Conexión de la aplicación con la base relacional",
+            "url": "/bases-2/bountyline/fase-2/conexion-de-la-aplicacion-con-la-base-relacional.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "01_creacion.sql",
+            "url": "/bases-2/bountyline/fase-2/01_creacion.sql",
+            "tipo": "sql"
+          },
+          {
+            "titulo": "02_logica.sql",
+            "url": "/bases-2/bountyline/fase-2/02_logica.sql",
+            "tipo": "sql"
+          },
+          {
+            "titulo": "03_insercion.sql",
+            "url": "/bases-2/bountyline/fase-2/03_insercion.sql",
+            "tipo": "sql"
+          },
+          {
+            "titulo": "04_usuarios.sql",
+            "url": "/bases-2/bountyline/fase-2/04_usuarios.sql",
+            "tipo": "sql"
+          }
+        ]
+      },
+      {
+        "nombre": "MongoDB",
+        "docs": [
+          {
+            "titulo": "Modelo documental",
+            "url": "/bases-2/bountyline/fase-2/modelo-documental.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Implementación de MongoDB",
+            "url": "/bases-2/bountyline/fase-2/implementacion-de-mongodb.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Conexión de la aplicación con MongoDB",
+            "url": "/bases-2/bountyline/fase-2/conexion-de-la-aplicacion-con-mongodb.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "01_colecciones.js",
+            "url": "/bases-2/bountyline/fase-2/01_colecciones.js",
+            "tipo": "js"
+          },
+          {
+            "titulo": "02_insercion.js",
+            "url": "/bases-2/bountyline/fase-2/02_insercion.js",
+            "tipo": "js"
+          },
+          {
+            "titulo": "03_usuarios.js",
+            "url": "/bases-2/bountyline/fase-2/03_usuarios.js",
+            "tipo": "js"
+          },
+          {
+            "titulo": "04_consultas.js",
+            "url": "/bases-2/bountyline/fase-2/04_consultas.js",
+            "tipo": "js"
+          }
+        ]
+      },
+      {
+        "nombre": "Respaldo y recuperación",
+        "docs": [
+          {
+            "titulo": "Políticas de respaldo",
+            "url": "/bases-2/bountyline/fase-2/politicas-de-respaldo.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Plan de recuperación ante desastres",
+            "url": "/bases-2/bountyline/fase-2/plan-de-recuperacion-ante-desastres.pdf",
+            "tipo": "pdf"
+          }
+        ]
+      },
+      {
+        "nombre": "Demostración y repositorio",
+        "docs": [
+          {
+            "titulo": "Documento de enlaces del equipo",
+            "url": "/bases-2/bountyline/fase-2/documento-de-enlaces-del-equipo.pdf",
+            "tipo": "pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cierre",
+    "titulo": "Informe ejecutivo y cierre",
+    "secciones": [
+      {
+        "nombre": "Documentos finales",
+        "docs": [
+          {
+            "titulo": "Informe ejecutivo final",
+            "url": "/bases-2/bountyline/cierre/informe-ejecutivo-final.pdf",
+            "tipo": "pdf"
+          },
+          {
+            "titulo": "Acta de cierre del proyecto",
+            "url": "/bases-2/bountyline/cierre/acta-de-cierre-del-proyecto.pdf",
+            "tipo": "pdf"
+          }
+        ]
+      }
+    ]
+  }
+]

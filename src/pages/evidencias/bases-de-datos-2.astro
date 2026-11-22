@@ -20,6 +20,13 @@ const tarjetas = [
     "url": "/evidencias/bases-de-datos-2/nosql/",
     "detalle": "Consultas y modelado de documentos en MongoDB.",
     "image": "/bases-2/portadas/mql.png"
+  }, 
+  {
+    "titulo": "Proyecto final",
+    "url": "/evidencias/bases-de-datos-2/proyecto-final/",
+    "detalle": "BountyLine · Inicio de sesión y registro.",
+    "image": "/bases-2/bountyline/inicio.png",
+    "registro": "/bases-2/bountyline/registro.png"
   }
 ];
 ---
@@ -32,9 +39,16 @@ const tarjetas = [
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
       {tarjetas.map((item) => (
         <a href={item.url} class="flex flex-col group rounded-xl overflow-hidden bg-neutral-950 border border-white/30 transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(255,255,255,0.3)]">
+          {item.registro ? (
+            <div class="grid w-full grid-cols-2 items-center gap-px aspect-[2.4/1] bg-neutral-950">
+              <img src={item.image} alt="Inicio de sesión de BountyLine" class="w-full" />
+              <img src={item.registro} alt="Registro de BountyLine" class="w-full" />
+            </div>
+          ) : (
           <div class="w-full aspect-[2.4/1] overflow-hidden bg-white">
             <img src={item.image} alt={item.titulo} class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" />
           </div>
+          )}
           <div class="p-5 space-y-2">
             <h2 class="text-xl font-semibold text-white">{item.titulo}</h2>
             <p class="text-sm text-gray-300">{item.detalle}</p>

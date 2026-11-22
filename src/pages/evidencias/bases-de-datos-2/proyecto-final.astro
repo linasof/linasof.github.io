@@ -1,0 +1,34 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import fases from "../../../data/bountyline-fases.json";
+const pantallas = [
+  { nombre: "Inicio de sesión", ruta: "/bases-2/bountyline/inicio.png", alt: "Acceso a BountyLine con selección de tipo de cuenta y perfil operativo." },
+  { nombre: "Registro", ruta: "/bases-2/bountyline/registro.png", alt: "Registro de BountyLine con alias, correo y selección del rol inicial." },
+];
+---
+<Layout title="Proyecto final · BountyLine">
+  <article class="mx-auto w-full max-w-5xl px-5 py-12 text-white">
+    <a href="/evidencias/bases-de-datos-2/" class="underline">← Volver a Bases de Datos 2</a>
+    <header class="my-8">
+      <p class="text-sm text-amber-200">Bases de Datos 2 · Proyecto final</p>
+      <h1 class="my-3 text-4xl font-black md:text-5xl">BountyLine</h1>
+      <p>En BountyLine los jugadores publican misiones y los cazarrecompensas se postulan para resolverlas. Estas son las pantallas de acceso y creación de cuenta del proyecto local.</p>
+    </header>
+    <nav aria-label="Documentación del proyecto" class="my-8 grid gap-4 sm:grid-cols-2">
+      {fases.map(fase => <a class="rounded-xl border border-white/30 bg-neutral-950 p-5 font-bold hover:underline" href={"/evidencias/bases-de-datos-2/proyecto-final/"+fase.slug+"/"}>{fase.titulo}</a>)}
+    </nav>
+    {pantallas.map(p => (
+      <section class="my-8">
+        <h2 class="mb-3 text-2xl font-bold">{p.nombre}</h2>
+        <a href={p.ruta} aria-label={"Ampliar captura: " + p.nombre}>
+          <img src={p.ruta} alt={p.alt} class="block w-full rounded-xl border border-white/25" />
+        </a>
+      </section>
+    ))}
+    <details class="my-8 rounded-xl border border-white/30 p-4">
+      <summary class="cursor-pointer font-bold">Consultar la guía del proyecto</summary>
+      <iframe title="Guía del profesor · Proyecto final" loading="lazy" src="/bases-2/bountyline/guia-proyecto.pdf#view=FitH" class="my-4 h-[70vh] w-full"></iframe>
+      <a class="underline" href="/bases-2/bountyline/guia-proyecto.pdf">Abrir la guía en PDF</a>
+    </details>
+  </article>
+</Layout>
