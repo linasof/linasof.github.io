@@ -1,65 +1,32 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
-
-const carpeta = "/bases-2/practica-airbnb/";
 const documentos = [
-  {
-    id: "practica",
-    titulo: "Desarrollo parcial de la práctica",
-    archivo: "practica.pdf",
-    enlace: "Abrir el desarrollo en PDF",
-  },
-  {
-    id: "guia",
-    titulo: "Guía de ejercicios",
-    archivo: "guia.pdf",
-    enlace: "Abrir la guía en PDF",
-  },
+  { id: "practica", titulo: "Desarrollo parcial de la práctica", archivo: "practica.pdf" },
+  { id: "guia", titulo: "Guía de ejercicios", archivo: "guia.pdf" },
 ];
+const carpeta = "/bases-2/practica-airbnb/";
 ---
-
 <Layout title="NoSQL · Práctica de Airbnb">
   <article class="mx-auto w-full min-w-0 max-w-5xl px-5 py-12 text-white">
-    <a href="/evidencias/bases-de-datos-2/nosql/" class="underline">
-      ← Volver a NoSQL
-    </a>
-
+    <a href="/evidencias/bases-de-datos-2/nosql/" class="underline">← Volver a NoSQL</a>
     <header class="my-8">
       <p class="text-sm text-amber-200">NoSQL</p>
-      <h1 class="my-3 text-4xl font-black md:text-5xl">
-        Práctica de MongoDB con alojamientos de Airbnb
-      </h1>
+      <h1 class="my-3 text-4xl font-black md:text-5xl">Práctica de MongoDB con alojamientos de Airbnb</h1>
       <p>Gabriella Castro, Lina Patiño y Julián Rodríguez</p>
-      <p class="mt-3">
-        Insertamos alojamientos y consultamos sus precios, tipos de propiedad
-        y servicios en la base de datos <code>sample_airbnb</code>.
-        El desarrollo reúne los ejercicios que resolvimos, con el código
-        y las capturas de los resultados.
-      </p>
+      <p class="mt-3">Insertamos alojamientos y consultamos sus precios, tipos de propiedad y servicios en la base de datos <code>sample_airbnb</code>. El desarrollo reúne los ejercicios que resolvimos, con código y capturas de los resultados.</p>
     </header>
-
-    <nav
-      aria-label="Secciones de la práctica"
-      class="flex flex-wrap gap-5 border-y border-white/25 py-4 underline"
-    >
-      {documentos.map((doc) => (
-        <a href={"#" + doc.id}>{doc.titulo}</a>
-      ))}
+    <section class="my-8 rounded-xl border border-white/25 bg-neutral-950 p-5"><h2 class="text-2xl font-bold">¿Cómo se consulta un alojamiento por precio?</h2>
+      <p class="mt-3">En el ejercicio 8 se buscan alojamientos con precio inferior a 75. El filtro decide qué documentos entran y la proyección muestra únicamente el nombre, el precio y el tipo de propiedad.</p>
+      <p class="mt-3 text-neutral-300">Compara ese ejercicio con el punto 13, que selecciona alojamientos con exactamente 20 servicios. El desarrollo parcial conserva el código y las capturas de los ejercicios realizados.</p>
+    </section>
+    <nav aria-label="Secciones de la práctica" class="flex flex-wrap gap-5 border-y border-white/25 py-4 underline">
+      {documentos.map(doc => <a href={"#" + doc.id}>{doc.titulo}</a>)}
     </nav>
-
-    {documentos.map((doc) => (
+    {documentos.map(doc => (
       <section id={doc.id} class="my-10">
         <h2 class="mb-3 text-2xl font-bold">{doc.titulo}</h2>
-
-        <iframe
-          title={doc.titulo}
-          src={carpeta + doc.archivo + "#view=FitH"}
-          class="block h-[70vh] w-full rounded-lg border border-white/25"
-        ></iframe>
-
-        <a href={carpeta + doc.archivo} class="mt-2 inline-block underline">
-          {doc.enlace}
-        </a>
+        <iframe title={doc.titulo} src={carpeta + doc.archivo + "#view=FitH"} class="block h-[70vh] w-full rounded-lg border border-white/25"></iframe>
+        <a class="mt-2 inline-block underline" href={carpeta + doc.archivo}>Abrir {doc.titulo.toLowerCase()} en PDF</a>
       </section>
     ))}
   </article>

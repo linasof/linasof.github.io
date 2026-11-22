@@ -6,11 +6,17 @@ export function getStaticPaths() {
   return fases.map(fase => ({params: {fase: fase.slug}, props: {fase}}));
 }
 const {fase} = Astro.props;
+const notas: Record<string, string> = {
+  "fase-1": "Para seguir el diseño, parte del caso de uso de cierre de misión. Localiza las entidades Misión, Billetera y Movimiento en los modelos y comprueba sus claves en el diccionario. El documento SQL de reportes muestra cómo se convierten esos datos en información para el administrador.",
+  "fase-2": "La operación de pago permite revisar la integración de principio a fin. En MySQL, 02_logica.sql comprueba el propietario y el estado antes de liberar créditos. En MongoDB, 01_colecciones.js define las colecciones e índices y 04_consultas.js muestra cómo consultar la actividad. Los documentos de conexión explican cómo se accede a ambos motores desde la aplicación.",
+  "cierre": "El equipo documentó 14 entidades y 12 consultas de reportes. Una lección del cierre fue contrastar los nombres de columnas y las versiones de software de la documentación con los scripts. El informe deja las pruebas de carga y las notificaciones en tiempo real como trabajo futuro."
+};
 ---
 <Layout title={fase.titulo + " · BountyLine"}>
   <article class="mx-auto w-full min-w-0 max-w-5xl px-5 py-12 text-white">
     <a href="/evidencias/bases-de-datos-2/proyecto-final/" class="underline">← Volver a BountyLine</a>
     <h1 class="my-8 text-4xl font-black">{fase.titulo}</h1>
+    <p class="my-6 max-w-prose">{notas[fase.slug]}</p>
     {fase.secciones.map(seccion => (
       <section class="my-8">
         <h2 class="mb-4 text-2xl font-bold">{seccion.nombre}</h2>

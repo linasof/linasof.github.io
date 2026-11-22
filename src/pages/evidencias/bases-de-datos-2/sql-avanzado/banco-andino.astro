@@ -4,8 +4,8 @@ import { readFileSync } from "node:fs";
 const base = "/bases-2/banco-andino";
 const sql = readFileSync("public/bases-2/banco-andino/04_reto_corregido.sql", "utf8");
 const documentos = [
-  ["Informe Final", "informe.pdf"],
-  ["Guía del taller", "guia.pdf"],
+  ["Informe del equipo", "informe.pdf"],
+  ["Guía del profesor", "guia.pdf"],
 ];
 ---
 <Layout title="SQL avanzado · Banco Andino">
@@ -17,6 +17,10 @@ const documentos = [
       <p>Lina Sofia Patiño, Gabriella Castro y Julián Samuel Rodríguez</p>
       <p class="mt-3">Analizamos transferencias simultáneas, corregimos la secuencia de débito y crédito y comparamos planes de ejecución con y sin índices.</p>
     </header>
+    <section class="my-8 rounded-xl border border-white/25 bg-neutral-950 p-5"><h2 class="text-2xl font-bold">¿Por qué dos retiros dejaron un saldo incorrecto?</h2>
+      <p class="mt-3">Las dos sesiones leyeron un saldo de $1.000.000. Al retirar $300.000 y $200.000 debían quedar $500.000, pero la última escritura dejó $800.000. La fila estuvo bloqueada durante la escritura y, aun así, se perdió un retiro: la segunda sesión había calculado su saldo con un dato anterior.</p>
+      <p class="mt-3 text-neutral-300">En el script, compara las dos conexiones con la secuencia corregida. Busca FOR UPDATE y observa dónde se confirma el débito junto con el crédito.</p>
+    </section>
     <nav aria-label="Secciones del taller" class="flex flex-wrap gap-4 border-y border-white/25 py-4 underline">
       <a href="#documentos">Documentos</a><a href="#capturas">Capturas</a><a href="#codigo">Script SQL</a><a href="#video">Video</a>
     </nav>

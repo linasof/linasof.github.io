@@ -18,6 +18,10 @@ const informes = [
       <p>Lina Sofia Patiño, Gabriella Michelle Castro y Julián Samuel Rodríguez</p>
       <p class="mt-3">Consultamos películas de sample_mflix, agrupamos resultados y comparamos la ejecución de una consulta antes y después de crear un índice compuesto. En la parte D presentamos modelos documentales con ejemplos en JSON.</p>
     </header>
+    <section class="my-8 rounded-xl border border-white/25 bg-neutral-950 p-5"><h2 class="text-2xl font-bold">¿Qué cambia cuando MongoDB utiliza un índice?</h2>
+      <p class="mt-3">El punto 14 repite una consulta sobre películas y compara su plan antes y después de crear un índice compuesto. La pregunta es cuántos documentos debe examinar el motor para obtener los resultados.</p>
+      <p class="mt-3 text-neutral-300">En el script, localiza executionStats y compara totalDocsExamined y el plan ganador. En el informe puedes contrastar esa evidencia con la consulta original.</p>
+    </section>
     <nav aria-label="Contenido del taller" class="flex flex-wrap gap-5 border-y border-white/25 py-4 underline">
       {informes.map(i => <a href={"#" + i.id}>{i.titulo}</a>)}<a href="#script">Script MQL</a>
     </nav>

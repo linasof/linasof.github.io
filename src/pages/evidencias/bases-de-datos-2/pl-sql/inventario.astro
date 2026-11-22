@@ -14,6 +14,10 @@ const codigo = readFileSync("public" + archivo, "utf8");
       <p>Gabriella Castro, Lina Patiño y Julián Rodríguez · Grupo 8</p>
       <p class="mt-3">Implementamos procedimientos para registrar productos, ajustar existencias y crear pedidos. El script incluye funciones, disparadores y el paquete de ventas PKG_VENTAS.</p>
     </header>
+    <section class="my-8 rounded-xl border border-white/25 bg-neutral-950 p-5"><h2 class="text-2xl font-bold">¿Cómo comprobar un ajuste de inventario?</h2>
+      <p class="mt-3">El caso de prueba llama dos veces a SP_AJUSTAR_STOCK para el mismo producto y la misma bodega: primero entran 20 unidades y luego salen 5. El cambio esperado respecto al stock inicial es de 15 unidades.</p>
+      <p class="mt-3 text-neutral-300">En el punto 1.2 del PDF, compara el saldo devuelto por cada llamada y los registros de MOVIMIENTO_INVENTARIO. Así puedes seguir tanto el saldo como el motivo del cambio.</p>
+    </section>
     <nav aria-label="Contenido del taller" class="flex flex-wrap gap-5 border-y border-white/25 py-4 underline">
       <a href="#evidencias">Evidencias del grupo</a><a href="#script">Script completo</a>
     </nav>
