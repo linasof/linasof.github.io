@@ -1,0 +1,15 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Indice from "../../../../components/IndiceBases2.astro";
+
+const tarjetas = [
+  {
+    "titulo": "Taller de PL/SQL · Inventario",
+    "url": "/evidencias/bases-de-datos-2/pl-sql/inventario/",
+    "detalle": "Evidencias del grupo 8 y bloques de prueba en Oracle."
+  }
+];
+---
+<Layout title="PL/SQL">
+  <Indice titulo="PL/SQL" volver="/evidencias/bases-de-datos-2/" anterior="Volver a Bases de Datos 2" tarjetas={tarjetas} />
+</Layout>

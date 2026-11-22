@@ -1,0 +1,20 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Indice from "../../../../components/IndiceBases2.astro";
+
+const tarjetas = [
+  {
+    "titulo": "Taller MQL · Películas y modelos documentales",
+    "url": "/evidencias/bases-de-datos-2/nosql/taller-mql/",
+    "detalle": "Script de consultas y agregaciones, y modelos en JSON."
+  },
+  {
+    "titulo": "Práctica de MongoDB · Alojamientos de Airbnb",
+    "url": "/evidencias/bases-de-datos-2/nosql/practica-airbnb/",
+    "detalle": "Guía de ejercicios y desarrollo parcial de la práctica."
+  }
+];
+---
+<Layout title="NoSQL">
+  <Indice titulo="NoSQL" volver="/evidencias/bases-de-datos-2/" anterior="Volver a Bases de Datos 2" tarjetas={tarjetas} />
+</Layout>

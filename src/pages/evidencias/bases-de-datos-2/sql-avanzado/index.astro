@@ -1,0 +1,15 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Indice from "../../../../components/IndiceBases2.astro";
+
+const tarjetas = [
+  {
+    "titulo": "Taller integrador · Banco Andino",
+    "url": "/evidencias/bases-de-datos-2/sql-avanzado/banco-andino/",
+    "detalle": "Guía, informe del equipo, script corregido y video."
+  }
+];
+---
+<Layout title="SQL avanzado">
+  <Indice titulo="SQL avanzado" volver="/evidencias/bases-de-datos-2/" anterior="Volver a Bases de Datos 2" tarjetas={tarjetas} />
+</Layout>

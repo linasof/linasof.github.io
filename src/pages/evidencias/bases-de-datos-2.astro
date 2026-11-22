@@ -1,26 +1,28 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Container from "../../components/elements/Container.astro";
+import Indice from "../../components/IndiceBases2.astro";
 
-// Para agregar un trabajo, sube el archivo a public/ y añade su título y ruta.
-// Ejemplo: { titulo: "Taller de consultas", archivo: "/taller-consultas.pdf" }
-const trabajos: { titulo: string; archivo: string }[] = [];
+const tarjetas = [
+  {
+    "titulo": "SQL avanzado",
+    "url": "/evidencias/bases-de-datos-2/sql-avanzado/",
+    "detalle": "Transacciones, concurrencia e índices en Oracle.",
+    "muestra": "SELECT saldo\nFROM cuenta\nFOR UPDATE;"
+  },
+  {
+    "titulo": "PL/SQL",
+    "url": "/evidencias/bases-de-datos-2/pl-sql/",
+    "detalle": "Procedimientos y pruebas para gestionar inventarios.",
+    "muestra": "DECLARE\n  v_id_prod NUMBER;\nBEGIN"
+  },
+  {
+    "titulo": "NoSQL",
+    "url": "/evidencias/bases-de-datos-2/nosql/",
+    "detalle": "Consultas y modelado de documentos en MongoDB.",
+    "muestra": "db.movies.find({\n  genres: \"Drama\"\n})"
+  }
+];
 ---
-
 <Layout title="Bases de Datos 2">
-  <Container variant="lg">
-    <section class="w-full text-white">
-      <a href="/evidencias" class="mb-5 inline-block underline">← Volver a Evidencias</a>
-      <h1 class="mb-10 text-center text-5xl font-black">Bases de Datos 2</h1>
-      {trabajos.length ? (
-        <ul class="grid gap-5">
-          {trabajos.map((trabajo) => (
-            <li><a href={trabajo.archivo} class="block border-2 border-white p-5 font-bold hover:underline">{trabajo.titulo}</a></li>
-          ))}
-        </ul>
-      ) : (
-        <p class="text-center">Próximamente encontrarás aquí mis trabajos de Bases de Datos 2.</p>
-      )}
-    </section>
-  </Container>
+  <Indice titulo="Bases de Datos 2" volver="/evidencias/" anterior="Volver a Evidencias" tarjetas={tarjetas} />
 </Layout>

@@ -1,0 +1,20 @@
+---
+const { titulo, volver, anterior, tarjetas } = Astro.props;
+---
+<section class="mx-auto w-full max-w-6xl px-5 py-12 text-white">
+  <a href={volver} class="text-sm underline underline-offset-4">← {anterior}</a>
+  <h1 class="my-9 text-4xl font-black md:text-5xl">{titulo}</h1>
+  <ul class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+    {tarjetas.map((item: {titulo: string; url: string; detalle: string; muestra?: string}) => (
+      <li>
+        <a href={item.url} class="group flex h-full flex-col overflow-hidden rounded-xl border border-white/30 bg-neutral-950 hover:border-white/70 focus-visible:outline-2">
+          {item.muestra && <pre aria-hidden="true" class="flex min-h-28 items-center whitespace-pre-wrap border-b border-white/15 bg-gradient-to-br from-neutral-800 to-neutral-950 px-5 text-sm text-amber-200">{item.muestra}</pre>}
+          <div class="p-5">
+            <h2 class="text-xl font-bold group-hover:underline">{item.titulo}</h2>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-300">{item.detalle}</p>
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
