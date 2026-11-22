@@ -1,20 +1,41 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
-import Indice from "../../../../components/IndiceBases2.astro";
-
+import Container from "../../../../components/elements/Container.astro";
+import Heading from "../../../../components/elements/Heading.astro";
 const tarjetas = [
   {
     "titulo": "Taller MQL · Películas y modelos documentales",
     "url": "/evidencias/bases-de-datos-2/nosql/taller-mql/",
-    "detalle": "Informe de consultas, agregación e índices, modelos documentales y script MQL."
+    "detalle": "Informe de consultas, agregación e índices, modelos documentales y script MQL.",
+    "image": "/bases-2/portadas/mql.png"
   },
   {
     "titulo": "Práctica de MongoDB · Alojamientos de Airbnb",
     "url": "/evidencias/bases-de-datos-2/nosql/practica-airbnb/",
-    "detalle": "Guía de ejercicios y desarrollo parcial de la práctica."
+    "detalle": "Guía de ejercicios y desarrollo parcial de la práctica.",
+    "image": "/bases-2/portadas/airbnb.png"
   }
 ];
 ---
 <Layout title="NoSQL">
-  <Indice titulo="NoSQL" volver="/evidencias/bases-de-datos-2/" anterior="Volver a Bases de Datos 2" tarjetas={tarjetas} />
+<Container variant={'lg'}>
+  <section class="w-full">
+    <a href="/evidencias/bases-de-datos-2/" class="mb-5 inline-block text-white underline">← Volver a Bases de Datos 2</a>
+    <Heading tagName="h1" tagSize="h2" class="text-center">NoSQL</Heading>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+      {tarjetas.map((item) => (
+        <a href={item.url} class="flex flex-col group rounded-xl overflow-hidden bg-neutral-950 border border-white/30 transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(255,255,255,0.3)]">
+          <div class="w-full aspect-[2.4/1] overflow-hidden bg-white">
+            <img src={item.image} alt={item.titulo} class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" />
+          </div>
+          <div class="p-5 space-y-2">
+            <h2 class="text-xl font-semibold text-white">{item.titulo}</h2>
+            <p class="text-sm text-gray-300">{item.detalle}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Container>
 </Layout>
