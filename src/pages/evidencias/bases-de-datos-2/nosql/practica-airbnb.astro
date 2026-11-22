@@ -1,14 +1,66 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
+
+const carpeta = "/bases-2/practica-airbnb/";
+const documentos = [
+  {
+    id: "practica",
+    titulo: "Desarrollo parcial de la práctica",
+    archivo: "practica.pdf",
+    enlace: "Abrir el desarrollo en PDF",
+  },
+  {
+    id: "guia",
+    titulo: "Guía de ejercicios",
+    archivo: "guia.pdf",
+    enlace: "Abrir la guía en PDF",
+  },
+];
 ---
-<Layout title="Práctica de MongoDB con alojamientos de Airbnb">
-  <article class="mx-auto w-full max-w-3xl px-5 py-12 text-white">
-    <a href="/evidencias/bases-de-datos-2/nosql/" class="underline">← Volver a NoSQL</a>
-    <h1 class="mt-8 text-4xl font-bold">Práctica de MongoDB con alojamientos de Airbnb</h1>
-    <p class="my-6">Practicamos la inserción y consulta de documentos en sample_airbnb. El documento de práctica reúne los ejercicios que desarrollamos, con código y capturas de los resultados.</p>
-    <ul class="space-y-3 underline">
-      <li><a href="/bases-2/practica-airbnb/guia.pdf">Leer la guía de ejercicios (PDF)</a></li>
-      <li><a href="/bases-2/practica-airbnb/practica.pdf">Ver el desarrollo parcial de la práctica (PDF)</a></li>
-    </ul>
+
+<Layout title="NoSQL · Práctica de Airbnb">
+  <article class="mx-auto w-full min-w-0 max-w-5xl px-5 py-12 text-white">
+    <a href="/evidencias/bases-de-datos-2/nosql/" class="underline">
+      ← Volver a NoSQL
+    </a>
+
+    <header class="my-8">
+      <p class="text-sm text-amber-200">NoSQL</p>
+      <h1 class="my-3 text-4xl font-black md:text-5xl">
+        Práctica de MongoDB con alojamientos de Airbnb
+      </h1>
+      <p>Gabriella Castro, Lina Patiño y Julián Rodríguez</p>
+      <p class="mt-3">
+        Insertamos alojamientos y consultamos sus precios, tipos de propiedad
+        y servicios en la base de datos <code>sample_airbnb</code>.
+        El desarrollo reúne los ejercicios que resolvimos, con el código
+        y las capturas de los resultados.
+      </p>
+    </header>
+
+    <nav
+      aria-label="Secciones de la práctica"
+      class="flex flex-wrap gap-5 border-y border-white/25 py-4 underline"
+    >
+      {documentos.map((doc) => (
+        <a href={"#" + doc.id}>{doc.titulo}</a>
+      ))}
+    </nav>
+
+    {documentos.map((doc) => (
+      <section id={doc.id} class="my-10">
+        <h2 class="mb-3 text-2xl font-bold">{doc.titulo}</h2>
+
+        <iframe
+          title={doc.titulo}
+          src={carpeta + doc.archivo + "#view=FitH"}
+          class="block h-[70vh] w-full rounded-lg border border-white/25"
+        ></iframe>
+
+        <a href={carpeta + doc.archivo} class="mt-2 inline-block underline">
+          {doc.enlace}
+        </a>
+      </section>
+    ))}
   </article>
 </Layout>
